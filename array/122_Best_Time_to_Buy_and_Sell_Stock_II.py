@@ -13,6 +13,7 @@ class Solution:
         while right < arr_len:
             current_profit = prices[right] - prices[left]
             if current_profit > 0:
+                # when current profit is a positive number
                 total_profit += current_profit
                 left = right
             else:

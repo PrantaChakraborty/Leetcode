@@ -18,15 +18,21 @@ class Solution:
     #
     #     return arr
 
-    def replaceElements(self, arr: List[int]) -> List[int]:
-        mx = tmp = -1
+    # def replaceElements(self, arr: List[int]) -> List[int]:
+    #     mx = tmp = -1
+    #     for i in range(len(arr) - 1, -1, -1):
+    #         if arr[i] > mx:
+    #             tmp = arr[i]
+    #             arr[i] = mx
+    #             mx = tmp
+    #         else:
+    #             arr[i] = mx
+    #     return arr
+
+    def replaceElements(self, arr):
+        mx = -1
         for i in range(len(arr) - 1, -1, -1):
-            if arr[i] > mx:
-                tmp = arr[i]
-                arr[i] = mx
-                mx = tmp
-            else:
-                arr[i] = mx
+            arr[i], mx = mx, max(mx, arr[i])
         return arr
 
 
